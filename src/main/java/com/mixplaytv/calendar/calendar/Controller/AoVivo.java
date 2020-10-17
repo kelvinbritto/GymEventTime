@@ -1,6 +1,7 @@
 package com.mixplaytv.calendar.calendar.Controller;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,49 +20,58 @@ public class AoVivo {
 	@Autowired
 	private EventoRepository eventoRepository;
 	
+	private LocalDateTime hora = LocalDateTime.now();
 	
 	@RequestMapping(method = RequestMethod.GET, value = "aovivo")
 	public ResponseEntity<Evento> aoVivo() {
 		
+		List<Evento> eventos = new ArrayList<Evento>();
 		
-		Integer hora = LocalDateTime.now().getHour();
+		Suporte suporte = new Suporte();
 		
-		if(LocalDateTime.now().getMinute() >= 45) {
+		
+		eventos.addAll(eventoRepository.findBydiaSemana("Sexta"));
+		//eventos.addAll(eventoRepository.findBydiaSemana(suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString())));
+		
+		Integer hora = this.hora.getHour();
+		
+		if(LocalDateTime.now().getMinute() >= 55) {
 			hora = LocalDateTime.now().getHour()+1;
 		}
+		 
 		
-		System.out.println(hora);
+		Evento evento = null;
 		
-		Evento evento = eventoRepository.findByHora(hora);
-
+		for (Evento evento2 : eventos) {
+			if(evento2.getHora() == hora) {
+				evento  = evento2;
+			}
+		}
+		
+		evento.status(evento);
+				
 		return ResponseEntity.ok(evento);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "proxima")
-	public ResponseEntity<Evento> proximaAula() {
-		
-		Evento evento = eventoRepository.findByHora(LocalDateTime.now().getHour() + 1);
-			
-		return ResponseEntity.ok(evento);
-		
-	}
 	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "proximas")
 	public ResponseEntity<List<Evento>> proximas() {
 		
 		Suporte suporte = new Suporte();
+		
 		String diaIngles = LocalDateTime.now().getDayOfWeek().toString();
 		
-		List<Evento> eventos = eventoRepository.findBydiaSemana(suporte.traduzDia(diaIngles));
+		List<Evento> eventos = eventoRepository.findBydiaSemana("Sexta");
 		
-		List<Evento> evento = suporte.aulasFaltam(eventos);
+		suporte.aulasFaltam(eventos);
+		
+		for (Evento evento2 : eventos) {
+			evento2.status(evento2);
+		}
 		
 		
-		
-		return ResponseEntity.ok(evento);
+		return ResponseEntity.ok(eventos);
 	}
-	
-	
 	
 }

@@ -1,0 +1,104 @@
+body{
+    background: black;
+}
+
+.logo{
+    width: 18%;
+    padding: 23px 0px 0px 0;
+}
+
+.live {
+    width: 4%;
+    padding-bottom: 1%;
+}
+
+.dataehora {
+    color: white;
+    font-family: verdana;
+    text-align-last: center;
+    position: absolute;
+    right: 35%;
+    top: 50px;
+}
+
+#time {
+    font-size: 520%;
+}
+
+#date {
+    font-size: 200%;
+}
+
+#aulaatual {
+    color: white;
+    font-size: 40px;
+
+}
+#professor {
+    color: white;
+    font-size: 30px;
+
+}
+
+
+.fadeOut {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.fadeIn {
+	opacity: 100;
+	transition: 0.5s;
+}
+
+#tabela-aula {
+    display: inline-block;
+    padding-bottom: 30%;
+
+}
+
+.tdlogo {
+    display: inline;
+}
+
+#tabela-proximas {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding-left: 10%;
+    padding-top: 8%;
+}
+
+.borda { 
+border-style: double;
+border-color: white;
+}
+
+
+.borda {
+    border-collapse: collapse;
+  }
+  
+  .borda td {
+    border: 1px solid white;
+  }
+
+#tabela-proximas td {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.terminou {
+    color: green;
+    
+}
+
+.aovivo {
+    color: red;
+    font-weight: bold;
+}
+
+.proxima {
+    color: yellow;
+}
+

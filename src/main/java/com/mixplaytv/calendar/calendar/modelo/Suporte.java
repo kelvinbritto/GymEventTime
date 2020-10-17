@@ -47,6 +47,12 @@ public class Suporte {
 		int i1 = horaAtual - horaInicio;
 		int i2 = 0;
 		
+		if(horaAtual == horaInicio) {
+			 i2 = 0;			
+		}else {
+			 i2 = 1;			
+		}
+		
 		while (i1 != i2) {
 			
 			eventosDia.remove(eventosDia.iterator().next());

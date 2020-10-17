@@ -1,0 +1,45 @@
+<html>
+<head>
+
+    <title>Mixplay Calendar</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+
+</head>
+
+<body>
+    
+    <div>
+        <img class="logo" src="resources/img/logomix.png" />
+        <img class="live" src="resources/img/live.gif" />
+        
+        <div class="dataehora">
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+    </div>
+    
+    <div>
+
+        <table id="tabela-aula">
+            <tr id="tr-aula">
+                <td class="tdlogo"><img id="logoaula" src="resources/img/modalidades/padrao.png"/></td>
+                <td><div id="aulaatual" class="fadeOut fadeIn"></div>
+                    <div id="professor" class="fadeOut fadeIn"></div></td>
+                </tr>
+            </table>
+            
+            
+            <table id="tabela-proximas">
+                <tr>
+                    <td>HORÁRIO</td>
+                    <td>AULA</td>
+                    <td>STATUS</td>
+                </tr>
+            </table>
+            
+    </div>
+            
+</body>
+<script src="resources/js/dataehora.js"></script>
+<script src="resources/js/aovivo.js"></script>
+</html>
