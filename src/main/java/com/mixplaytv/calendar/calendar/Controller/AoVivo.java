@@ -27,7 +27,7 @@ public class AoVivo {
 		
 		List<Evento> eventos = new ArrayList<Evento>();
 		
-		Suporte suporte = new Suporte();
+		//Suporte suporte = new Suporte();
 		
 		
 		eventos.addAll(eventoRepository.findBydiaSemana("Sexta"));
@@ -35,17 +35,30 @@ public class AoVivo {
 		
 		Integer hora = this.hora.getHour();
 		
-		if(LocalDateTime.now().getMinute() >= 55) {
-			hora = LocalDateTime.now().getHour()+1;
-		}
-		 
-		
 		Evento evento = null;
 		
+			
 		for (Evento evento2 : eventos) {
-			if(evento2.getHora() == hora) {
+			if(evento2.getHora() == 16) {
 				evento  = evento2;
 			}
+		}
+		
+		if(evento == null) {
+			
+			if(hora > 21) {
+				
+				Evento eventoNovo = new Evento();
+				eventoNovo.setAula("BOA NOITE!!");
+				eventoNovo.setId(99L);
+				return ResponseEntity.ok(eventoNovo);
+			
+			}
+			
+			Evento eventoNovo = new Evento();
+			eventoNovo.setAula("BOM DIA!!!");
+			eventoNovo.setId(99L);
+			return ResponseEntity.ok(eventoNovo);
 		}
 		
 		evento.status(evento);
@@ -60,7 +73,7 @@ public class AoVivo {
 		
 		Suporte suporte = new Suporte();
 		
-		String diaIngles = LocalDateTime.now().getDayOfWeek().toString();
+		//String diaIngles = LocalDateTime.now().getDayOfWeek().toString();
 		
 		List<Evento> eventos = eventoRepository.findBydiaSemana("Sexta");
 		

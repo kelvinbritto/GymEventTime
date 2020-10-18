@@ -14,8 +14,6 @@ function aovivo() {
 
 
             aulaOriginal = aula;
-
-            
             
             document.getElementById('aulaatual').innerHTML= aula.aula;
             document.getElementById('professor').innerHTML= aula.professor;

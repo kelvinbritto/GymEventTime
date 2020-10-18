@@ -52,8 +52,9 @@ body{
 }
 
 #tabela-aula {
+    position: absolute;
     display: inline-block;
-    padding-bottom: 30%;
+    top: 30%;
 
 }
 
@@ -62,11 +63,14 @@ body{
 }
 
 #tabela-proximas {
+    position: relative;
     display: inline-block;
     color: white;
     text-align: center;
     padding-left: 10%;
     padding-top: 8%;
+    padding-bottom: 12%;
+    left: 44%;
 }
 
 .borda { 
