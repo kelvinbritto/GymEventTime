@@ -1,8 +1,8 @@
 var xhr1 = new XMLHttpRequest();
+
 var xhr2 = new XMLHttpRequest();
 
 function aovivo() {
-
 
     xhr1.open("GET", "http://localhost:8081/aovivo");
     xhr1.withCredentials = true;
@@ -114,7 +114,7 @@ function adicionaProxima(aula)  {
         tr.classList.add("terminou");
     }
 
-    if(aula.status == "Proxima") {
+    if(aula.status == "A seguir") {
         tr.classList.add("proxima");
     }
     

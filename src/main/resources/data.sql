@@ -1,71 +1,71 @@
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Cxworx', 'Jhonata', 'Segunda', 07);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Danilo', 'Segunda', 08);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Segunda', 09);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerJump', 'Danilo', 'Segunda', 10);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyAttack', 'Rafael', 'Segunda', 11);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber', 'Segunda', 12);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomen', 'Dimitri', 'Segunda', 13);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Dimitri', 'Segunda', 14);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Oxygen', 'Rebecca', 'Segunda', 15);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('RPM', 'Estefano', 'Segunda', 16);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Mixdance', 'Kleber', 'Segunda', 17);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano', 'Segunda', 18);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerXtreme', 'Jhonata', 'Segunda', 19);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Segunda', 20);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Constancia', 'Joy Carolino', 'Segunda', 21);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Alongamento', 'Jhonata Santos', 'Segunda', 07);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerJump', 'Danilo Souza', 'Segunda', 08);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis Paes', 'Segunda', 09);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Danilo Souza', 'Segunda', 10);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyAttack', 'Rafael Soares', 'Segunda', 11);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber Sousa', 'Segunda', 12);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomen', 'Dimitri Rodrigues', 'Segunda', 13);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Dimitri Rodrigues', 'Segunda', 14);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Oxygen', 'Estefano Messias', 'Segunda', 15);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerXtreme', 'Estefano Messias', 'Segunda', 16);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Mixdance', 'Kleber Sousa', 'Segunda', 17);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomen', 'Estefano Messias', 'Segunda', 18);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Local Xtreme', 'Jhonata Santos', 'Segunda', 19);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis Paes', 'Segunda', 20);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Alimentação', 'Irmãs Loyola', 'Segunda', 21);
 
 
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Cxworx', 'Jhonata', 'Terça', 07);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Danilo', 'Terça', 08);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Terça', 09);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerJump', 'Danilo', 'Terça', 10);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyAttack', 'Rafael', 'Terça', 11);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber', 'Terça', 12);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomen', 'Dimitri', 'Terça', 13);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Dimitri', 'Terça', 14);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Oxygen', 'Rebecca', 'Terça', 15);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('RPM', 'Estefano', 'Terça', 16);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Mixdance', 'Kleber', 'Terça', 17);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano', 'Terça', 18);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerXtreme', 'Jhonata', 'Terça', 19);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Terça', 20);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Constancia', 'Joy Carolino', 'Terça', 21);
-
-
-
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Cxworx', 'Jhonata', 'Quarta', 07);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Danilo', 'Quarta', 08);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Quarta', 09);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerJump', 'Danilo', 'Quarta', 10);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyAttack', 'Rafael', 'Quarta', 11);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber', 'Quarta', 12);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomen', 'Dimitri', 'Quarta', 13);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Dimitri', 'Quarta', 14);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Oxygen', 'Rebecca', 'Quarta', 15);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('RPM', 'Estefano', 'Quarta', 16);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Mixdance', 'Kleber', 'Quarta', 17);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano', 'Quarta', 18);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerXtreme', 'Jhonata', 'Quarta', 19);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Quarta', 20);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Constancia', 'Joy Carolino', 'Quarta', 21);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano Messias', 'Terça', 07);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Step', 'Carol', 'Terça', 08);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('DeRose', 'Thais Barbeiro', 'Terça', 09);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Cxworx', 'Danilo Sousa', 'Terça', 10);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Sh`bam', 'Danilo Sousa', 'Terça', 11);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Adriano Santana', 'Terça', 12);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Funcional/Hiit', 'Mariana Craaide', 'Terça', 13);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('GAP', 'Mariana Craaide', 'Terça', 14);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('DeRose Method', 'Thais Barbeiro', 'Terça', 15);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('CxWorx', 'Jhonata Santos', 'Terça', 16);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyCombat', 'Jhonata Santos', 'Terça', 17);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Adriano Santana', 'Terça', 18);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Strong', 'Lincoln Evangelista', 'Terça', 19);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Erika Coelho', 'Terça', 20);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Mente', 'Caê Nobrega', 'Terça', 21);
 
 
 
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Cxworx', 'Jhonata', 'Quinta', 07);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Danilo', 'Quinta', 08);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Quinta', 09);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerJump', 'Danilo', 'Quinta', 10);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyAttack', 'Rafael', 'Quinta', 11);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber', 'Quinta', 12);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomen', 'Dimitri', 'Quinta', 13);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Dimitri', 'Quinta', 14);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Oxygen', 'Rebecca', 'Quinta', 15);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('RPM', 'Estefano', 'Quinta', 16);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Mixdance', 'Kleber', 'Quinta', 17);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano', 'Quinta', 18);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('PowerXtreme', 'Jhonata', 'Quinta', 19);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Luis', 'Quinta', 20);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Constancia', 'Joy Carolino', 'Quinta', 21);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Grit/Abdomên', 'Jhonata Santos', 'Quarta', 07);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyCombat', 'Danilo Souza', 'Quarta', 08);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Local Xtreme', 'Jhonata Santos', 'Quarta', 09);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Erika Coelho', 'Quarta', 10);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Strong', 'Lincoln Evangelista', 'Quarta', 11);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber Sousa', 'Quarta', 12);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Cxworx/Alongamento', 'Dimitri Rodrigues', 'Quarta', 13);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyCombat', 'Dimitri Rodrigues', 'Quarta', 14);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Oxygen', 'Estefano Messias', 'Quarta', 15);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BIKE/RPM', 'Estefano Messias', 'Quarta', 16);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Kleber Sousa', 'Quarta', 17);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyPump', 'Lincoln Evangelista', 'Quarta', 18);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano Messias', 'Quarta', 19);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Erika Coelho', 'Quarta', 20);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Exercicio', 'Mariana Craaide', 'Quarta', 21);
+
+
+
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyBalance', 'Estefano Messias', 'Quinta', 07);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('STEP', 'Carol', 'Quinta', 08);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('DeRose', 'Thais Barbeiro', 'Quinta', 09);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('CxWorx', 'Danilo Sousa', 'Quinta', 10);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyJam', 'Danilo Sousa', 'Quinta', 11);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('MixDance', 'Adriano Santana', 'Quinta', 12);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Funcional/HIIT', 'Mariana Craaide', 'Quinta', 13);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('GAP', 'Mariana Craaide', 'Quinta', 14);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('DeRose Method', 'Thais Barbeiro', 'Quinta', 15);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('CxWorx', 'Jhonata Santos', 'Quinta', 16);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('BodyCombat', 'Jhonata Santos', 'Quinta', 17);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Mixdance', 'Adriano Santana', 'Quinta', 18);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Strong', 'Lincoln Evangelista', 'Quinta', 19);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('Zumba', 'Erika Coelho', 'Quinta', 20);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES ('LIVE - Vontade', 'Anderson Gouveia', 'Quinta', 21);
 
 
 

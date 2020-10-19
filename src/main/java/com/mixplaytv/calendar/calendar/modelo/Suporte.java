@@ -66,4 +66,21 @@ public class Suporte {
 
 	}
 
+	public void AlteraStatus(Evento evento) {
+		
+		if(LocalDateTime.now().getHour() > evento.getHora()) {
+			evento.setStatus("Terminou");
+		}else {
+			if(LocalDateTime.now().getHour() < evento.getHora()) {
+				if(LocalDateTime.now().getHour()+1 == evento.getHora()) {
+					evento.setStatus("A seguir");
+				}else {
+					evento.setStatus("");
+				}
+			} else {
+					evento.setStatus("Ao Vivo");
+			}
+		}
+	}
+	
 }

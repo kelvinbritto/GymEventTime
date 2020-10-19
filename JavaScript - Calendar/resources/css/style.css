@@ -12,6 +12,15 @@ body{
     padding-bottom: 1%;
 }
 
+#acontecendo {
+    color: white;
+    display: inline-block;
+    font-size: 50px;
+    position: relative;
+    top: 20%;
+    left: 7%;
+}
+
 .dataehora {
     color: white;
     font-family: verdana;
@@ -54,7 +63,8 @@ body{
 #tabela-aula {
     position: absolute;
     display: inline-block;
-    top: 30%;
+    top: 50%;
+    left: 0px;
 
 }
 
@@ -68,7 +78,7 @@ body{
     color: white;
     text-align: center;
     padding-left: 10%;
-    padding-top: 8%;
+    padding-top: 0%;
     padding-bottom: 12%;
     left: 44%;
 }
@@ -105,4 +115,6 @@ border-color: white;
 .proxima {
     color: yellow;
 }
+
+
 
