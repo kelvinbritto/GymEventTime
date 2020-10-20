@@ -5,13 +5,16 @@ function time() {
 
     hour=today.getHours();
     min=today.getMinutes();
-    sec=today.getSeconds();
+    sec=today.getUTCSeconds();
 
     day = today.getDate();
     month = today.getMonth()+1;
     year = today.getFullYear();
 
+    weekday = today.getDay();
 
+    var days = ["DOM", "SEG", "TER", "QUA", "QUI", "SEXTOU!", "SAB"];
+    
     if(day < 10) {
         day = "0" + day;
     }
@@ -32,10 +35,23 @@ function time() {
         sec = "0" + sec;
     }
 
+
+
     document.getElementById('time').innerHTML=hour+":"+min+":"+sec;
 
-    document.getElementById('date').innerHTML=day+"/"+month+"/"+year ;
-    setTimeout('time()',500);
+    document.getElementById('date').innerHTML=days[weekday] + " - " + day+"/"+month+"/"+year;
+
+
+    setTimeout('time()',200);
 }
 
 time();
+
+function recarrega() {
+    document.location.reload(true);
+    
+    setTimeout('recarrega()',60000);
+}
+
+
+

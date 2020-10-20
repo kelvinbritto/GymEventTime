@@ -4,7 +4,7 @@ var xhr2 = new XMLHttpRequest();
 
 function aovivo() {
 
-    xhr1.open("GET", "http://localhost:8081/aovivo");
+    xhr1.open("GET", "http://192.168.15.136:8081/aovivo");
     xhr1.withCredentials = true;
 
     xhr1.addEventListener("load", function () {
@@ -28,7 +28,6 @@ function aovivo() {
 
     setTimeout('aovivo()',5000);
 
-
 }
 
 aovivo();
@@ -47,7 +46,7 @@ function trocaImagem(id) {
 function proximas() {
 
 
-    xhr2.open("GET", "http://localhost:8081/proximas");
+    xhr2.open("GET", "http://192.168.15.136:8081/proximas");
     xhr2.withCredentials = true;
 
     xhr2.addEventListener("load", function () {

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mixplaytv.calendar.calendar.modelo.Evento;
-import com.mixplaytv.calendar.calendar.modelo.Hora;
 import com.mixplaytv.calendar.calendar.modelo.Suporte;
 import com.mixplaytv.calendar.calendar.repository.EventoRepository;
 
@@ -29,12 +28,18 @@ public class AoVivoController {
 		Suporte suporte = new Suporte();
 
 		// eventos.addAll(eventoRepository.findBydiaSemana("Sexta"));
+		
 		eventos.addAll(
 				eventoRepository.findBydiaSemana(suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString())));
 
 		Integer hora = LocalDateTime.now().getHour();
+		Integer min = LocalDateTime.now().getMinute();
 
 		Evento evento = null;
+		
+		if(min >= 50) {
+			hora++;
+		}
 
 		for (Evento evento2 : eventos) {
 			if (evento2.getHora() == hora) {
@@ -72,6 +77,7 @@ public class AoVivoController {
 		String diaIngles = LocalDateTime.now().getDayOfWeek().toString();
 
 		List<Evento> eventos = eventoRepository.findBydiaSemana(suporte.traduzDia(diaIngles));
+		
 		// List<Evento> eventos = eventoRepository.findBydiaSemana("Sexta");
 
 		suporte.aulasFaltam(eventos);
@@ -99,16 +105,6 @@ public class AoVivoController {
 		}
 
 		return ResponseEntity.ok(eventos);
-	}
-	
-	@RequestMapping(method = RequestMethod.GET, value = "horario")
-	public ResponseEntity<Hora> hora() {
-
-		
-		Hora hora = new Hora();
-	
-
-		return ResponseEntity.ok(hora);
 	}
 
 }

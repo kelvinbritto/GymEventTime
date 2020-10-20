@@ -40,8 +40,14 @@ public class Suporte {
 
 		List<Evento> lista = new ArrayList<Evento>();
 		int horaAtual = LocalDateTime.now().getHour();
+		
 		int horaInicio = 7;
 		
+		if(horaAtual == 7) {
+			horaInicio = 6;
+		}else {
+			horaInicio = 7;
+		}
 		
 		
 		int i1 = horaAtual - horaInicio;
@@ -67,8 +73,9 @@ public class Suporte {
 	}
 
 	public void AlteraStatus(Evento evento) {
-		
-		if(LocalDateTime.now().getHour() > evento.getHora()) {
+
+				
+		if(LocalDateTime.now().getHour() == evento.getHora() && LocalDateTime.now().getMinute() >= 50 || LocalDateTime.now().getHour() > evento.getHora()) {
 			evento.setStatus("Terminou");
 		}else {
 			if(LocalDateTime.now().getHour() < evento.getHora()) {

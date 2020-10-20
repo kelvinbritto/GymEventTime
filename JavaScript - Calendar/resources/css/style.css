@@ -4,21 +4,23 @@ body{
 
 .logo{
     width: 18%;
-    padding: 23px 0px 0px 0;
+    padding: 23px 0px 0px 20px;
+    padding-top: 3%;
 }
 
 .live {
-    width: 4%;
-    padding-bottom: 1%;
+    width: 6%;
+    padding-bottom: 0%;
 }
 
 #acontecendo {
     color: white;
     display: inline-block;
-    font-size: 50px;
+    font-size: 60px;
     position: relative;
+    font-weight: bold;
     top: 20%;
-    left: 7%;
+    left: 4%;
 }
 
 .dataehora {
@@ -27,25 +29,29 @@ body{
     text-align-last: center;
     position: absolute;
     right: 35%;
-    top: 50px;
+    top: 55px;
 }
 
 #time {
-    font-size: 520%;
+    font-size: 800%;
 }
 
 #date {
-    font-size: 200%;
+    font-size: 400%;
+}
+
+#day {
+    font-size: 300%;
 }
 
 #aulaatual {
     color: white;
-    font-size: 40px;
+    font-size: 60px;
 
 }
 #professor {
     color: white;
-    font-size: 30px;
+    font-size: 55px;
 
 }
 
@@ -64,12 +70,12 @@ body{
     position: absolute;
     display: inline-block;
     top: 50%;
-    left: 0px;
-
+    left: 4%;
 }
 
 .tdlogo {
     display: inline;
+    width: 107%;
 }
 
 #tabela-proximas {
@@ -77,8 +83,8 @@ body{
     display: inline-block;
     color: white;
     text-align: center;
-    padding-left: 10%;
-    padding-top: 0%;
+    padding-left: 1%;
+    padding-top: 5%;
     padding-bottom: 12%;
     left: 44%;
 }
@@ -86,11 +92,14 @@ body{
 .borda { 
 border-style: double;
 border-color: white;
+font-weight: 10px;
 }
+
 
 
 .borda {
     border-collapse: collapse;
+    
   }
   
   .borda td {
@@ -98,12 +107,12 @@ border-color: white;
   }
 
 #tabela-proximas td {
-    font-size: 30px;
+    font-size: 60px;
     padding: 10px;
 }
 
 .terminou {
-    color: green;
+    color: greenyellow;
     
 }
 
