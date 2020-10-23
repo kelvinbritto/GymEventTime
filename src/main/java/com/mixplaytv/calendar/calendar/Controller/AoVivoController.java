@@ -26,8 +26,6 @@ public class AoVivoController {
 		List<Evento> eventos = new ArrayList<Evento>();
 
 		Suporte suporte = new Suporte();
-
-		// eventos.addAll(eventoRepository.findBydiaSemana("Sexta"));
 		
 		eventos.addAll(
 				eventoRepository.findBydiaSemana(suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString())));
@@ -74,12 +72,10 @@ public class AoVivoController {
 
 		Suporte suporte = new Suporte();
 
-		String diaIngles = LocalDateTime.now().getDayOfWeek().toString();
+		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
 
-		List<Evento> eventos = eventoRepository.findBydiaSemana(suporte.traduzDia(diaIngles));
+		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
 		
-		// List<Evento> eventos = eventoRepository.findBydiaSemana("Sexta");
-
 		suporte.aulasFaltam(eventos);
 
 		for (Evento evento2 : eventos) {
@@ -94,10 +90,9 @@ public class AoVivoController {
 
 		Suporte suporte = new Suporte();
 
-		String diaIngles = LocalDateTime.now().getDayOfWeek().toString();
+		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
 
-		List<Evento> eventos = eventoRepository.findBydiaSemana(suporte.traduzDia(diaIngles));
-		// List<Evento> eventos = eventoRepository.findBydiaSemana("Sexta");
+		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
 
 
 		for (Evento evento2 : eventos) {

@@ -12,16 +12,15 @@ function aovivo() {
         var resposta = xhr1.responseText;
         var aula = JSON.parse(resposta);
 
-
             aulaOriginal = aula;
-            
+
             document.getElementById('aulaatual').innerHTML= aula.aula;
             document.getElementById('professor').innerHTML= aula.professor;
             trocaImagem(aula.id);
 
         proximas();
 
-        
+
     });
 
     xhr1.send();
@@ -79,7 +78,7 @@ function proximas() {
 
 
         aulas.forEach(adicionaProxima);
-        
+
     });
 
     xhr2.send();
@@ -104,7 +103,7 @@ function adicionaProxima(aula)  {
     tr.appendChild(tdHora);
     tr.appendChild(tdAula);
     tr.appendChild(tdStatus);
-    
+
     if(aula.status == "Ao Vivo") {
         tr.classList.add("aovivo");
     }
@@ -116,7 +115,7 @@ function adicionaProxima(aula)  {
     if(aula.status == "A seguir") {
         tr.classList.add("proxima");
     }
-    
+
     tr.classList.add("borda");
 
     tabela.appendChild(tr);

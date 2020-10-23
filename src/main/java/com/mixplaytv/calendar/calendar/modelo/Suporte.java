@@ -16,7 +16,7 @@ public class Suporte {
 		case "TUESDAY":
 			return "Terça";
 
-		case "FOURTH":
+		case "WEDNESDAY":
 			return "Quarta";
 
 		case "THURSDAY":
@@ -40,33 +40,32 @@ public class Suporte {
 
 		List<Evento> lista = new ArrayList<Evento>();
 		int horaAtual = LocalDateTime.now().getHour();
-		
+
 		int horaInicio = 7;
-		
-		if(horaAtual == 7) {
+
+		if (horaAtual == 7) {
 			horaInicio = 6;
-		}else {
+		} else {
 			horaInicio = 7;
 		}
-		
-		
+
 		int i1 = horaAtual - horaInicio;
 		int i2 = 0;
-		
-		if(horaAtual == horaInicio) {
-			 i2 = 0;			
-		}else {
-			 i2 = 1;			
+
+		if (horaAtual == horaInicio) {
+			i2 = 0;
+		} else {
+			i2 = 1;
 		}
-		
+
 		while (i1 != i2) {
-			
+
 			eventosDia.remove(eventosDia.iterator().next());
 			i2++;
-		
+
 		}
-		
-		lista.addAll(eventosDia);		
+
+		lista.addAll(eventosDia);
 
 		return lista;
 
@@ -74,20 +73,22 @@ public class Suporte {
 
 	public void AlteraStatus(Evento evento) {
 
-				
-		if(LocalDateTime.now().getHour() == evento.getHora() && LocalDateTime.now().getMinute() >= 50 || LocalDateTime.now().getHour() > evento.getHora()) {
+		if (LocalDateTime.now().getHour() == evento.getHora() && LocalDateTime.now().getMinute() >= 50
+				|| LocalDateTime.now().getHour() > evento.getHora()) {
 			evento.setStatus("Terminou");
-		}else {
-			if(LocalDateTime.now().getHour() < evento.getHora()) {
-				if(LocalDateTime.now().getHour()+1 == evento.getHora()) {
+
+		} else {
+
+			if (LocalDateTime.now().getHour() < evento.getHora()) {
+				if (LocalDateTime.now().getHour() + 1 == evento.getHora()) {
 					evento.setStatus("A seguir");
-				}else {
+				} else {
 					evento.setStatus("");
 				}
 			} else {
-					evento.setStatus("Ao Vivo");
+				evento.setStatus("Ao Vivo");
 			}
 		}
 	}
-	
+
 }

@@ -47,11 +47,5 @@ function time() {
 
 time();
 
-function recarrega() {
-    document.location.reload(true);
-    
-    setTimeout('recarrega()',60000);
-}
-
 
 
