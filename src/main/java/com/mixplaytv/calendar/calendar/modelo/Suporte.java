@@ -43,7 +43,7 @@ public class Suporte {
 
 		int horaInicio = 7;
 
-		if (horaAtual == 7) {
+		if (horaAtual == 7 || horaAtual == 6) {
 			horaInicio = 6;
 		} else {
 			horaInicio = 7;

@@ -2,9 +2,11 @@ var xhr1 = new XMLHttpRequest();
 
 var xhr2 = new XMLHttpRequest();
 
+var url = "http:192.168.15.136:8081";
+
 function aovivo() {
 
-    xhr1.open("GET", "http://192.168.15.136:8081/aovivo");
+    xhr1.open("GET", url + "/aovivo");
     xhr1.withCredentials = true;
 
     xhr1.addEventListener("load", function () {
@@ -45,7 +47,7 @@ function trocaImagem(id) {
 function proximas() {
 
 
-    xhr2.open("GET", "http://192.168.15.136:8081/proximas");
+    xhr2.open("GET", url + "/proximas");
     xhr2.withCredentials = true;
 
     xhr2.addEventListener("load", function () {
@@ -84,8 +86,6 @@ function proximas() {
     xhr2.send();
 
 }
-
-
 
 
 function adicionaProxima(aula)  {

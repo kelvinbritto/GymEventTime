@@ -63,7 +63,7 @@ INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('DeRose Method', 
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('CxWorx', 'Jhonata Santos', 'Quinta', 16);
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('BodyCombat', 'Jhonata Santos', 'Quinta', 17);
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Mixdance', 'Adriano Santana', 'Quinta', 18);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Strong', 'Lincoln Evangelista', 'Quinta', 19);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Strong', 'Erika Coelho', 'Quinta', 19);
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Zumba', 'Erika Coelho', 'Quinta', 20);
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('LIVE - Vontade', 'Anderson Gouveia', 'Quinta', 21);
 

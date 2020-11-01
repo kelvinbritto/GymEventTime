@@ -125,5 +125,17 @@ font-weight: 10px;
     color: yellow;
 }
 
+#sexta {
+    color: pink;
+    font-family: verdana;
+    font-size: 500%;
+    text-align-last: center;
+}
 
 
+#sexta {
+    color: white;
+    font-family: verdana;
+    font-size: 500%;
+    text-align-last: center;
+  }
