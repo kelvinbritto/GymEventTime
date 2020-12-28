@@ -1,4 +1,4 @@
-# GymEventTime
+# GymEventTime || Automated Schedule
 Solução de Grade Horária Automatizada
 
 # Desafio
