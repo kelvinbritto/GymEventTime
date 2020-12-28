@@ -12,7 +12,7 @@ INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Mixdance', 'Kleb
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Grit/Abdomen', 'Estefano Messias', 'Segunda', 18);
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Local Xtreme', 'Jhonata Santos', 'Segunda', 19);
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('Zumba', 'Luis Paes', 'Segunda', 20);
-INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('LIVE - Alimentação', 'Irmãs Loyola', 'Segunda', 21);
+INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('LIVE - Alimentação', 'Claudia Duarte', 'Segunda', 21);
 
 
 INSERT INTO EVENTO(aula, professor, dia_semana, hora) VALUES  ('BodyBalance', 'Estefano Messias', 'Terça', 07);

@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Mixplay Calendar</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="resources/style.css" />
+</head>
+<body class="bg-secondary">
+
+    <header>
+        <div class="container-fluid p-3 mb-2 bg-dark bg-gradient text-white">
+            <div class="row">
+                <div class="col-4">
+                    <img class="img-fluid" style="width: 55%;" src="resources/img/logomix.png"/>
+                </div>
+                <div class="col-5">
+                    <div class="mx-auto " style="width: 300px;">
+                        <h1 id="time" class="row justify-content-md-center display-1 fw-bolder"></h1>
+                        <h3 id="date" class="row justify-content-md-center"></h3>
+                        <h3 id="sexta" class="row justify-content-md-center fs-2 mt-2"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div id="tabela-aovivo" class="col-12 col-lg-5 mb-3">
+                <div class="card bg-dark bg-gradient text-white" style="width: 20rem;">
+                    <div id="acontecendo" class="card-header fw-bold text-center fs-4 bg-primary">
+                    </div>
+                    <img id="logoaula" src="resources/img/modalidades/padrao.png" class="card-img-top">
+
+                    <div class="card-body border-top border-primary">
+                      <h5 id="modalidade-titulo" class="card-title fs-2 fw-bolder text-info"></h5>
+                      <p id="modalidade-prof" class="card-text fs-5"></p>
+                    </div>
+                  </div>
+            </div>
+
+            <div id="tabela-proximas" class="col-12 col-lg-7 table-responsive">
+                <table class="table">
+                    <thead class="bg-primary">
+                        <th class="col-2 border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">HORÁRIO</th>
+                        <th class="col-2 border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">MODALIDADE</th>
+                        <th class="col-2 border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">PROFESSOR</th>
+                        <th class="col-2 border border-dark text-center fw-bold fs-4 text-white" scope="col">STATUS</th>
+                    </thead>
+                    <tbody id="tabela-corpo">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="resources/js/dataehora.js"></script>
+    <script src="resources/js/aovivoboot-table.js"></script>
+
+</body>
+
+</html>
