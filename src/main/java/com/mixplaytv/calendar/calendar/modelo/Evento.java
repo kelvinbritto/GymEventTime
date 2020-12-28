@@ -16,7 +16,7 @@ public class Evento {
 	private String professor;
 	private String diaSemana;
 	private Integer hora;
-	private String status = "Não Começou";
+	private String status;
 
 
 	public String getStatus() {

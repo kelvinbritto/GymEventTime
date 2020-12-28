@@ -24,19 +24,16 @@ public class AoVivoController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "aovivo")
 	public ResponseEntity<Evento> aoVivo() {
-
+		
 		List<Evento> eventos = new ArrayList<Evento>();
-
+		Evento evento = null;
 		Suporte suporte = new Suporte();
-
-		eventos.addAll(
-				eventoRepository.findBydiaSemana(suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString())));
-
+		
+		eventos.addAll(eventoRepository.findBydiaSemana(suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString())));
+		
 		Integer hora = LocalDateTime.now().getHour();
 		Integer min = LocalDateTime.now().getMinute();
-
-		Evento evento = null;
-
+		
 		if (min >= 50) {
 			hora++;
 		}
@@ -48,32 +45,18 @@ public class AoVivoController {
 		}
 
 		if (evento == null) {
-
-			if (hora > 21) {
-
-				Evento eventoNovo = new Evento();
-				eventoNovo.setAula("BOA NOITE!!");
-				eventoNovo.setId(99L);
-				return ResponseEntity.ok(eventoNovo);
-
-			}
-
-			Evento eventoNovo = new Evento();
-			eventoNovo.setAula("BOM DIA!!!");
-			eventoNovo.setId(99L);
-			return ResponseEntity.ok(eventoNovo);
+			evento = suporte.BomDiaeBoaNoite();
+			return ResponseEntity.ok(evento);
 		}
 
 		suporte.AlteraStatus(evento);
-
 		return ResponseEntity.ok(evento);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "proximas")
 	public ResponseEntity<List<Evento>> proximas() {
-
+		
 		Suporte suporte = new Suporte();
-
 		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
 
 		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
@@ -91,9 +74,7 @@ public class AoVivoController {
 	public ResponseEntity<List<Evento>> aulasdia() {
 
 		Suporte suporte = new Suporte();
-
 		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
-
 		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
 
 		for (Evento evento2 : eventos) {

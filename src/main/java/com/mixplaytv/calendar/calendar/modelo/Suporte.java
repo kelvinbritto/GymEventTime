@@ -1,7 +1,6 @@
 package com.mixplaytv.calendar.calendar.modelo;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Suporte {
@@ -36,9 +35,8 @@ public class Suporte {
 		return null;
 	}
 
-	public List<Evento> aulasFaltam(List<Evento> eventosDia) {
+	public void aulasFaltam(List<Evento> eventosDia) {
 
-		List<Evento> lista = new ArrayList<Evento>();
 		int horaAtual = LocalDateTime.now().getHour();
 
 		int horaInicio = 7;
@@ -59,29 +57,22 @@ public class Suporte {
 		}
 
 		while (i1 != i2) {
-
 			eventosDia.remove(eventosDia.iterator().next());
 			i2++;
-
 		}
-
-		lista.addAll(eventosDia);
-
-		return lista;
 
 	}
 
 	public void AlteraStatus(Evento evento) {
 
-		if (LocalDateTime.now().getHour() == evento.getHora() && LocalDateTime.now().getMinute() >= 50
-				|| LocalDateTime.now().getHour() > evento.getHora()) {
+		int horaAtual = LocalDateTime.now().getHour();
+
+		if (horaAtual == evento.getHora() && LocalDateTime.now().getMinute() >= 50 || horaAtual > evento.getHora()) {
 			evento.setStatus("Terminou");
-
 		} else {
-
-			if (LocalDateTime.now().getHour() < evento.getHora()) {
-				if (LocalDateTime.now().getHour() + 1 == evento.getHora()) {
-					evento.setStatus("A seguir");
+			if (horaAtual < evento.getHora()) {
+				if (horaAtual + 1 == evento.getHora()) {
+					evento.setStatus("A Seguir");
 				} else {
 					evento.setStatus("");
 				}
@@ -89,6 +80,23 @@ public class Suporte {
 				evento.setStatus("Ao Vivo");
 			}
 		}
+	}
+
+	public Evento BomDiaeBoaNoite() {
+
+		int hora = LocalDateTime.now().getHour();
+
+		if (hora > 21) {
+			Evento eventoNovo = new Evento();
+			eventoNovo.setAula("BOA NOITE!!");
+			eventoNovo.setId(99L);
+			return eventoNovo;
+		}
+
+		Evento eventoNovo = new Evento();
+		eventoNovo.setAula("BOM DIA!!!");
+		eventoNovo.setId(99L);
+		return eventoNovo;
 	}
 
 }
