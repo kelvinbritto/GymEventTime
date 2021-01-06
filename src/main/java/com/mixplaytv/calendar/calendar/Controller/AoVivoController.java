@@ -29,7 +29,9 @@ public class AoVivoController {
 		Evento evento = null;
 		Suporte suporte = new Suporte();
 		
-		eventos.addAll(eventoRepository.findBydiaSemana(suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString())));
+		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
+		
+		eventos.addAll(eventoRepository.findBydiaSemana(diaPortugues));
 		
 		Integer hora = LocalDateTime.now().getHour();
 		Integer min = LocalDateTime.now().getMinute();
@@ -60,11 +62,10 @@ public class AoVivoController {
 		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
 
 		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
-
 		suporte.aulasFaltam(eventos);
 
-		for (Evento evento2 : eventos) {
-			suporte.AlteraStatus(evento2);
+		for (Evento evento : eventos) {
+			suporte.AlteraStatus(evento);
 		}
 
 		return ResponseEntity.ok(eventos);

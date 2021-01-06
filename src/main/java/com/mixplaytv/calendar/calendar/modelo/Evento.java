@@ -16,8 +16,17 @@ public class Evento {
 	private String professor;
 	private String diaSemana;
 	private Integer hora;
+	private String urlLogo;
 	private String status;
 
+
+	public String getUrlLogo() {
+		return urlLogo;
+	}
+
+	public void setUrlLogo(String urlLogo) {
+		this.urlLogo = urlLogo;
+	}
 
 	public String getStatus() {
 		return status;
