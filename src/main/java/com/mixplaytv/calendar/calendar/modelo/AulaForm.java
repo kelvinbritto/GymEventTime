@@ -5,7 +5,16 @@ public class AulaForm {
 	private String aula;
 	private String professor;
 	private String diaSemana;
+	private String urlLogo;
 	private Integer hora;
+
+	public String getUrlLogo() {
+		return urlLogo;
+	}
+
+	public void setUrlLogo(String urlLogo) {
+		this.urlLogo = urlLogo;
+	}
 
 	public String getAula() {
 		return aula;

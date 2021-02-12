@@ -1,15 +1,15 @@
 package com.mixplaytv.calendar.calendar.Controller;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.mixplaytv.calendar.calendar.modelo.AulaForm;
 import com.mixplaytv.calendar.calendar.modelo.Evento;
@@ -17,98 +17,42 @@ import com.mixplaytv.calendar.calendar.modelo.Suporte;
 import com.mixplaytv.calendar.calendar.repository.EventoRepository;
 
 @RestController
-public class AoVivoController {
-
+@Scope(value = WebApplicationContext.SCOPE_REQUEST)
+public class AoVivoController {	
+	
+	Suporte suporte = new Suporte();
+	
 	@Autowired
 	private EventoRepository eventoRepository;
-
+	
 	@RequestMapping(method = RequestMethod.GET, value = "aovivo")
 	public ResponseEntity<Evento> aoVivo() {
 		
-		List<Evento> eventos = new ArrayList<Evento>();
-		Evento evento = null;
-		Suporte suporte = new Suporte();
-		
-		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
-		
-		eventos.addAll(eventoRepository.findBydiaSemana(diaPortugues));
-		
-		Integer hora = LocalDateTime.now().getHour();
-		Integer min = LocalDateTime.now().getMinute();
-		
-		if (min >= 50) {
-			hora++;
-		}
-
-		for (Evento evento2 : eventos) {
-			if (evento2.getHora() == hora) {
-				evento = evento2;
-			}
-		}
-
-		if (evento == null) {
-			evento = suporte.BomDiaeBoaNoite();
-			return ResponseEntity.ok(evento);
-		}
-
-		suporte.AlteraStatus(evento);
-		return ResponseEntity.ok(evento);
+		return ResponseEntity.ok(suporte.aulaAoVivo(eventoRepository));
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "proximas")
 	public ResponseEntity<List<Evento>> proximas() {
 		
-		Suporte suporte = new Suporte();
-		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
-
-		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
-		suporte.aulasFaltam(eventos);
-
-		for (Evento evento : eventos) {
-			suporte.AlteraStatus(evento);
-		}
-
-		return ResponseEntity.ok(eventos);
+		return ResponseEntity.ok(suporte.proximasAulas(eventoRepository));
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "aulasdia")
 	public ResponseEntity<List<Evento>> aulasdia() {
 
-		Suporte suporte = new Suporte();
-		String diaPortugues = suporte.traduzDia(LocalDateTime.now().getDayOfWeek().toString());
-		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
-
-		for (Evento evento2 : eventos) {
-			suporte.AlteraStatus(evento2);
-		}
-
-		return ResponseEntity.ok(eventos);
+		return ResponseEntity.ok(suporte.aulasDia(eventoRepository));
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "alteraaula")
 	public ResponseEntity<Evento> alteraAula(@RequestBody AulaForm aula) {
 		
-		
-		List<Evento> eventosDia = eventoRepository.findBydiaSemana(aula.getDiaSemana());
-		Evento evento = null;
-		
-		for (Evento evento1 : eventosDia) {
-			if (evento1.getHora() == aula.getHora()) {
-				evento = evento1;
-			}	
-		}
+		Evento evento = suporte.alteraAula(aula, eventoRepository);
 		
 		if (evento == null) {
 			return ResponseEntity.badRequest().build();
-		}
-		
-		evento.setAula(aula.getAula());
-		evento.setProfessor(aula.getProfessor());
-		
-		eventoRepository.save(evento);
+		}	
 		
 		return ResponseEntity.ok(evento);
-		
 	}
 
 }

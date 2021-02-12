@@ -8,17 +8,16 @@ import javax.persistence.Id;
 @Entity
 public class Evento {
 
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private String aula;	
+
+	private String aula;
 	private String professor;
 	private String diaSemana;
 	private Integer hora;
 	private String urlLogo;
 	private String status;
-
 
 	public String getUrlLogo() {
 		return urlLogo;
@@ -75,6 +74,5 @@ public class Evento {
 	public void setDiaSemana(String diaSemana) {
 		this.diaSemana = diaSemana;
 	}
-		
-	
+
 }

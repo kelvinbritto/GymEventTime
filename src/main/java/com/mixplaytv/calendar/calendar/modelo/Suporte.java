@@ -1,10 +1,100 @@
 package com.mixplaytv.calendar.calendar.modelo;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.mixplaytv.calendar.calendar.repository.EventoRepository;
 
 public class Suporte {
 
+
+	public Evento aulaAoVivo(EventoRepository eventoRepository) {
+		List<Evento> eventos = new ArrayList<Evento>();
+		Evento eventoAoVivo = null;
+		
+		String diaPortugues = traduzDia(LocalDateTime.now().getDayOfWeek().toString());
+		eventos.addAll(eventoRepository.findBydiaSemana(diaPortugues));
+		
+		Integer hora = LocalDateTime.now().getHour();
+		Integer min = LocalDateTime.now().getMinute();
+		
+		if (min >= 50) {
+			hora++;
+		}
+
+		for (Evento evento : eventos) {
+			if (evento.getHora() == hora) {
+				eventoAoVivo = evento;
+			}
+		}
+		
+
+		if (eventoAoVivo == null) {
+			return BomDiaeBoaNoite();
+		}
+		
+		alteraStatus(eventoAoVivo, eventoRepository);
+		
+		return eventoAoVivo;
+	}
+	
+	
+	public List<Evento> proximasAulas(EventoRepository eventoRepository) {
+		
+		String diaPortugues = traduzDia(LocalDateTime.now().getDayOfWeek().toString());
+
+		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
+
+		aulasFaltam(eventos);
+
+		for (Evento evento2 : eventos) {
+			alteraStatus(evento2, eventoRepository);
+		}
+		
+		return eventos;
+	}
+
+	public List<Evento> aulasDia(EventoRepository eventoRepository){
+		
+		String diaPortugues = traduzDia(LocalDateTime.now().getDayOfWeek().toString());
+		List<Evento> eventos = eventoRepository.findBydiaSemana(diaPortugues);
+
+		for (Evento evento2 : eventos) {
+			alteraStatus(evento2, eventoRepository);
+		}
+		
+		return eventos;
+	}
+	
+	public Evento alteraAula(AulaForm aula, EventoRepository eventoRepository) {
+		
+		List<Evento> eventosDia = eventoRepository.findBydiaSemana(aula.getDiaSemana());
+		Evento evento = null;
+		
+		for (Evento evento1 : eventosDia) {
+			if (evento1.getHora() == aula.getHora()) {
+				evento = evento1;
+			}	
+		}
+		
+		if (evento == null) {
+			return null;
+		}
+		
+		evento.setAula(aula.getAula());
+		evento.setProfessor(aula.getProfessor());
+		
+		
+		if(aula.getUrlLogo() != null || aula.getUrlLogo() != "") {
+			evento.setUrlLogo(aula.getUrlLogo());
+		}
+
+		eventoRepository.save(evento);
+		
+		return evento;
+	}
+	
 	public String traduzDia(String diaIngles) {
 
 		switch (diaIngles) {
@@ -38,13 +128,10 @@ public class Suporte {
 	public void aulasFaltam(List<Evento> eventosDia) {
 
 		int horaAtual = LocalDateTime.now().getHour();
-
 		int horaInicio = 7;
 
 		if (horaAtual == 7 || horaAtual == 6) {
 			horaInicio = 6;
-		} else {
-			horaInicio = 7;
 		}
 
 		int i1 = horaAtual - horaInicio;
@@ -63,7 +150,7 @@ public class Suporte {
 
 	}
 
-	public void AlteraStatus(Evento evento) {
+	public void alteraStatus(Evento evento, EventoRepository eventoRepository) {
 
 		int horaAtual = LocalDateTime.now().getHour();
 
@@ -80,22 +167,26 @@ public class Suporte {
 				evento.setStatus("Ao Vivo");
 			}
 		}
+		
+		eventoRepository.save(evento);
 	}
 
 	public Evento BomDiaeBoaNoite() {
 
 		int hora = LocalDateTime.now().getHour();
 
-		if (hora > 21) {
+		if (hora > 19) {
 			Evento eventoNovo = new Evento();
 			eventoNovo.setAula("BOA NOITE!!");
 			eventoNovo.setId(99L);
+			eventoNovo.setUrlLogo("https://i.ibb.co/LkMPjMv/Mixplaytv-Logo.png");
 			return eventoNovo;
 		}
 
 		Evento eventoNovo = new Evento();
 		eventoNovo.setAula("BOM DIA!!!");
 		eventoNovo.setId(99L);
+		eventoNovo.setUrlLogo("https://i.ibb.co/LkMPjMv/Mixplaytv-Logo.png");
 		return eventoNovo;
 	}
 
