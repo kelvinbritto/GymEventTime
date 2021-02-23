@@ -4,38 +4,10 @@ function time() {
 
     today=new Date();
 
+    hour = colocaZero   (today.getHours());
+    min = colocaZero    (today.getMinutes());
+    sec = colocaZero    (today.getUTCSeconds());
 
-    hour=today.getHours();
-    min=today.getMinutes();
-    sec=today.getUTCSeconds();
-
-    day = today.getDate();
-    month = today.getMonth()+1;
-    year = today.getFullYear();
-
-    weekday = today.getDay();
-
-    var days = ["DOM", "SEG", "TER", "QUA", "QUI", "SEXTOU", "SAB"];
-    
-    if(day < 10) {
-        day = "0" + day;
-    }
-    
-    if(month < 10) {
-        month = "0" + month;
-    }
-
-    if(hour < 10) {
-        hour = "0" + hour;
-    }
-
-    if(min < 10) {
-        min = "0" + min;
-    }
-
-    if(sec < 10) {
-        sec = "0" + sec;
-    }
 
 
     document.getElementById('time').innerHTML=hour+":"+min+":"+sec;
@@ -47,12 +19,11 @@ function data() {
 
     today=new Date();
 
-    day = today.getDate();
-    month = today.getMonth()+1;
+    day = colocaZero(today.getDate());
+    month = colocaZero(today.getMonth()+1);
     year = today.getFullYear();
 
     weekday = today.getDay();
-
     var days = ["DOM", "SEG", "TER", "QUA", "QUI", "SEXTOU", "SAB"];
 
     if(weekday != 5) {
@@ -72,14 +43,68 @@ function data() {
 
         setTimeout('data()',200);
     }
-
     setTimeout('data()',50000);
-    
-    
+}
+
+
+function colocaZero(numero) {
+    if(numero < 10) {
+        x = "0" + numero;
+        return x;
+    }
+    return numero;
+}
+
+
+function progress() {
+    today=new Date();
+    horaAtual = today.getHours();
+    horaInicio = 7;
+
+    for (var i = horaInicio; i < horaAtual; i++) {
+        progressoSuccess(i);
+    }
+
+    sec = today.getUTCSeconds();
+    min = today.getMinutes();
+
+    u = min * 60;
+    y = u + sec;
+    x = (y * 7) / 3600;
+
+    document.getElementById('i' + horaAtual).style.width = x + "%";
+
+    if(x < 7) {
+        document.getElementById('i' + horaAtual).classList.add("bg-info");
+    } else {
+	document.getElementById('i' + horaAtual).classList.remove("bg-info");
+}
+
+    setTimeout('progress()',1000);
+}
+
+
+function progressoSuccess(i) {
+    document.getElementById('i' + i).style.width = 7 + "%";
+}
+
+function progresso() {
+    today=new Date();
+
+    horaAtual = today.getHours();
+    horaInicio = 7;
+    aulasPassadas = horaAtual - horaInicio;
+
+    horas = aulasPassadas * 60;
+    min = horas + today.getMinutes();
+
+
+    i = (min * 100) / 840;
+    document.getElementById('progresso').style.width = i + "%";
+
 }
 
 time();
 data();
-
-
+progress();
 

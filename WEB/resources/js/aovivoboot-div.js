@@ -2,7 +2,7 @@ var xhr1 = new XMLHttpRequest();
 
 var xhr2 = new XMLHttpRequest();
 
-var url = "http://192.168.15.141:8081";
+var url = "http://192.168.15.136:8081";
 
 function aovivo() {
 

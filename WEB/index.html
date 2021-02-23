@@ -7,16 +7,33 @@
 </head>
 <body class="bg-secondary">
 
-    <header>
-        <div class="container-fluid p-3 mb-2 bg-dark bg-gradient text-white">
+    <header class="fixed-top">
+        <div class="progress">
+            <div id="i7"  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i8"  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i9"  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i10" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i11" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i12" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i13" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i14" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i15" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i16" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i17" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i18" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i19" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i20" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="i21" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="container-fluid p-3 mb-5 bg-dark bg-gradient text-white">
             <div class="row">
-                <div class="col-4">
-                    <img class="img-fluid" style="width: 55%;" src="resources/img/logomix.png"/>
+                <div class="col-4 pt-5">
+                    <img class="img-fluid" style="width: 65%;" src="resources/img/logomix.png"/>
                 </div>
                 <div class="col-5">
-                    <div class="mx-auto " style="width: 300px;">
+                    <div class="mx-auto" style="width: 300px;">
                         <h1 id="time" class="row justify-content-md-center display-1 fw-bolder"></h1>
-                        <h3 id="date" class="row justify-content-md-center"></h3>
+                        <h3 id="date" class="row justify-content-md-center fs-2"></h3>
                         <h3 id="sexta" class="row justify-content-md-center fs-2 mt-2"></h3>
                     </div>
                 </div>
@@ -24,28 +41,28 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container position-absolute" style="top: 32%; left: 2%;">
         <div class="row">
-            <div id="tabela-aovivo" class="col-12 col-lg-5 mb-3">
+            <div id="tabela-aovivo" class="col-5 mb-3">
                 <div class="card bg-dark bg-gradient text-white" style="width: 20rem;">
                     <div id="acontecendo" class="card-header fw-bold text-center fs-4 bg-primary">
                     </div>
                     <img id="logoaula" src="resources/img/modalidades/padrao.png" class="card-img-top">
 
                     <div class="card-body border-top border-primary">
-                      <h5 id="modalidade-titulo" class="card-title fs-2 fw-bolder text-info"></h5>
-                      <p id="modalidade-prof" class="card-text fs-5"></p>
+                      <h5 id="modalidade-titulo" class="card-title fs-2 fw-bolder text-info mb-2"></h5>
+                      <p id="modalidade-prof" class="card-text fs-3"></p>
                     </div>
                   </div>
             </div>
 
-            <div id="tabela-proximas" class="col-12 col-lg-7 table-responsive">
+            <div id="tabela-proximas" class="col-7">
                 <table class="table">
                     <thead class="bg-primary">
-                        <th class="col-2 border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">HORÁRIO</th>
-                        <th class="col-2 border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">MODALIDADE</th>
-                        <th class="col-2 border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">PROFESSOR</th>
-                        <th class="col-2 border border-dark text-center fw-bold fs-4 text-white" scope="col">STATUS</th>
+                        <th class="border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">HORA</th>
+                        <th class="border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">MODALIDADE</th>
+                        <th class="border border-end-0 border-dark text-center fw-bold fs-4 text-white" scope="col">PROFESSOR</th>
+                        <th class="border border-dark text-center fw-bold fs-4 text-white" scope="col">STATUS</th>
                     </thead>
                     <tbody id="tabela-corpo">
                     </tbody>
@@ -58,6 +75,12 @@
 
     <script src="resources/js/dataehora.js"></script>
     <script src="resources/js/aovivoboot-table.js"></script>
+
+    <script type="text/javascript">
+        setTimeout(function() {
+          location.reload(true);
+        }, 50000);
+    </script>
 
 </body>
 

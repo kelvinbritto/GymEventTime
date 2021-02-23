@@ -1,0 +1,6 @@
+2021-02-22 10:40:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EVENTO" not found; SQL statement:
+select evento0_.id as id1_0_, evento0_.aula as aula2_0_, evento0_.dia_semana as dia_sema3_0_, evento0_.hora as hora4_0_, evento0_.professor as professo5_0_, evento0_.status as status6_0_, evento0_.url_logo as url_logo7_0_ from evento evento0_ where evento0_.dia_semana=? [42102-200]
+2021-02-22 10:40:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EVENTO" not found; SQL statement:
+select evento0_.id as id1_0_, evento0_.aula as aula2_0_, evento0_.dia_semana as dia_sema3_0_, evento0_.hora as hora4_0_, evento0_.professor as professo5_0_, evento0_.status as status6_0_, evento0_.url_logo as url_logo7_0_ from evento evento0_ where evento0_.dia_semana=? [42102-200]

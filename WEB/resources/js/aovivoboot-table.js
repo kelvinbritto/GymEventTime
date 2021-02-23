@@ -1,8 +1,10 @@
 var xhr1 = new XMLHttpRequest();
-
 var xhr2 = new XMLHttpRequest();
+var xhrteste = new XMLHttpRequest();
 
-var url = "http://localhost:8081";
+
+var url = "http://calendarmixplay.ddns.net:8081";
+
 
 function aovivo() {
 
@@ -26,8 +28,7 @@ function aovivo() {
 
 function aulaAoVivo(aula) {
 
-    trocaImagem(aula.id)
-    
+    trocaImagem(aula)
     document.querySelector("#modalidade-titulo").textContent = aula.aula;
     document.querySelector("#modalidade-prof").textContent = aula.professor;
 
@@ -52,8 +53,14 @@ function proximas() {
         var resposta = xhr2.responseText;
         var aulas = JSON.parse(resposta);
 
-        preenchertabela(aulas);
+        if(aulas[0].status == "Terminou" && aulas[1].status == "Terminou") {
+            aulas.splice(0, 1); 
+        }
 
+        var tabela = document.querySelector("#tabela-corpo");
+        tabela.innerHTML = "";
+    
+        aulas.forEach(criaHeader);
 
         setTimeout('proximas()',5000);
 
@@ -66,16 +73,6 @@ function proximas() {
 proximas();
 aovivo();
 
-function preenchertabela(aulas) {
-
-    var tabela = document.querySelector("#tabela-corpo");
-    tabela.innerHTML = "";
-
-
-
-    aulas.forEach(criaHeader);
-    
-}
 
 function criaHeader(aula) {
 
@@ -84,16 +81,16 @@ function criaHeader(aula) {
     tr = document.createElement("tr");
     
     tdHora = document.createElement("td");
-    tdHora.classList.add("col-2", "border", "border-end-0", "border-dark", "text-center", "fs-4", "text-white");
+    tdHora.classList.add("border", "border-end-0", "border-dark", "text-center", "fs-4", "text-white", "align-middle");
 
     tdAula = document.createElement("td");
-    tdAula.classList.add("col-5", "border", "border-end-0", "border-dark", "text-center", "fs-4", "text-white");
+    tdAula.classList.add("border", "border-end-0", "border-dark", "text-center", "fs-4", "text-white", "align-middle");
 
     tdProf = document.createElement("td");
-    tdProf.classList.add("col-3", "border", "border-end-0", "border-dark", "text-center", "fs-4", "text-white");
+    tdProf.classList.add("border", "border-end-0", "border-dark", "text-center", "fs-4", "text-white", "align-middle");
 
     tdStatus = document.createElement("td");
-    tdStatus.classList.add("col-1", "border", "border-dark", "text-center", "fs-4", "text-white");
+    tdStatus.classList.add("border", "border-dark", "text-center", "fs-5", "text-white", "align-middle");
 
     tdHora.textContent = aula.hora + "h";
     tdAula.textContent = aula.aula;
@@ -127,20 +124,18 @@ function criaHeader(aula) {
 }
 
 function criaLinha() {
-
     divLinha = document.createElement("div");
     divLinha.classList.add("row", "row-cols-4");
     divLinha.style.width = "800px";
-
     return divLinha;
 }
 
 
-function trocaImagem(id) {
-    var imagem = document.querySelector('#logoaula');
+function trocaImagem(aula) {
+    imagem = document.querySelector('#logoaula');
     imagem.classList.add("fadeOut");
     setTimeout(function() {
-        imagem.src = 'resources/img/modalidades/' + id + '.png';
+        imagem.src = aula.urlLogo;
         imagem.classList.add("fadeIn");
     },500);
 }
