@@ -1,21 +1,28 @@
 package com.mixplaytv.calendar.calendar.modelo;
 
+import java.time.LocalTime;
+
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Evento {
+public class Aula {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String aula;
+	private String modalidade;
 	private String professor;
-	private String diaSemana;
-	private Integer hora;
+
+	@Enumerated(EnumType.STRING)
+	private DiaSemana diaSemana;
+
+	private LocalTime horario;
 	private String urlLogo;
 	private String status;
 
@@ -43,12 +50,20 @@ public class Evento {
 		this.id = id;
 	}
 
-	public String getAula() {
-		return aula;
+	public String getModalidade() {
+		return modalidade;
 	}
 
-	public void setAula(String aula) {
-		this.aula = aula;
+	public void setModalidade(String modalidade) {
+		this.modalidade = modalidade;
+	}
+
+	public LocalTime getHorario() {
+		return horario;
+	}
+
+	public void setHorario(LocalTime horario) {
+		this.horario = horario;
 	}
 
 	public String getProfessor() {
@@ -59,19 +74,11 @@ public class Evento {
 		this.professor = professor;
 	}
 
-	public Integer getHora() {
-		return hora;
-	}
-
-	public void setHora(Integer hora) {
-		this.hora = hora;
-	}
-
-	public String getDiaSemana() {
+	public DiaSemana getDiaSemana() {
 		return diaSemana;
 	}
 
-	public void setDiaSemana(String diaSemana) {
+	public void setDiaSemana(DiaSemana diaSemana) {
 		this.diaSemana = diaSemana;
 	}
 
