@@ -1,57 +1,72 @@
 package com.mixplaytv.calendar.calendar.Controller;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.mixplaytv.calendar.calendar.modelo.Aula;
 import com.mixplaytv.calendar.calendar.modelo.AulaForm;
-import com.mixplaytv.calendar.calendar.modelo.Evento;
-import com.mixplaytv.calendar.calendar.modelo.Suporte;
-import com.mixplaytv.calendar.calendar.repository.EventoRepository;
+import com.mixplaytv.calendar.calendar.modelo.DiaSemana;
+import com.mixplaytv.calendar.calendar.service.AulaService;
 
 @RestController
 @Scope(value = WebApplicationContext.SCOPE_REQUEST)
-public class AoVivoController {	
-	
-	Suporte suporte = new Suporte();
-	
+public class AoVivoController {
+
 	@Autowired
-	private EventoRepository eventoRepository;
-	
-	@RequestMapping(method = RequestMethod.GET, value = "aovivo")
-	public ResponseEntity<Evento> aoVivo() {
-		
-		return ResponseEntity.ok(suporte.aulaAoVivo(eventoRepository));
+	private AulaService aulaService;
+
+	@GetMapping("/teste")
+	public ResponseEntity<Aula> teste() {
+
+		Aula aula = new Aula();
+
+		aula.setDiaSemana(DiaSemana.SEGUNDA);
+		aula.setHorario(LocalTime.of(12, 0));
+		aula.setProfessor("Professor Fulano");
+		aula.setModalidade("Power Jump");
+		aulaService.salva(aula);
+
+		return ResponseEntity.ok(aula);
+
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "proximas")
-	public ResponseEntity<List<Evento>> proximas() {
-		
-		return ResponseEntity.ok(suporte.proximasAulas(eventoRepository));
+	@GetMapping("/aovivo")
+	public ResponseEntity<Aula> aoVivo() {
+
+		return ResponseEntity.ok(aulaService.aulaAoVivo());
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "aulasdia")
-	public ResponseEntity<List<Evento>> aulasdia() {
+	@GetMapping("/proximas")
+	public ResponseEntity<List<Aula>> proximas() {
 
-		return ResponseEntity.ok(suporte.aulasDia(eventoRepository));
+		return ResponseEntity.ok(aulaService.proximasAulas());
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "alteraaula")
-	public ResponseEntity<Evento> alteraAula(@RequestBody AulaForm aula) {
-		
-		Evento evento = suporte.alteraAula(aula, eventoRepository);
-		
+	@GetMapping("/aulasdia")
+	public ResponseEntity<List<Aula>> aulasdia() {
+
+		return ResponseEntity.ok(aulaService.aulasDia());
+	}
+
+	@PostMapping("/alteraaula")
+	public ResponseEntity<Aula> alteraAula(@RequestBody AulaForm aula) {
+
+		Aula evento = aulaService.alteraAula(aula);
+
 		if (evento == null) {
 			return ResponseEntity.badRequest().build();
-		}	
-		
+		}
+
 		return ResponseEntity.ok(evento);
 	}
 
